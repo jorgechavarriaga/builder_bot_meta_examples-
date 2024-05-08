@@ -9,6 +9,7 @@ const PORT = process.env.PORT ?? 3008
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAction(
         async (ctx, { flowDynamic, provider }) => {
+            await flowDynamic('\u{1F4A1} Send Location:')
             const to = ctx.from
             const location = {
                 long_number: '-73.5697008',
@@ -16,7 +17,6 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
                 name: "Office",
                 address: '4468 Wellington St Suite 204'
             }
-            await flowDynamic('\u{1F4A1} Send Location:')
             await provider.sendLocation(to, location)
         }
     )

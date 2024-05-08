@@ -8,7 +8,8 @@ const PORT = process.env.PORT ?? 3008
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAction(
-        async (ctx, { provider }) => {
+        async (ctx, { flowDynamic, provider }) => {
+            await flowDynamic('\u{1F4A1} Request Location')
             const id = '+' + ctx.from
             provider.sendMessageMeta({
                 messaging_product: 'whatsapp',

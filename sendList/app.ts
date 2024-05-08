@@ -9,6 +9,7 @@ const PORT = process.env.PORT ?? 3008
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAction(
         async (ctx, { flowDynamic, provider }) => {
+            await flowDynamic('\u{1F4A1} Send List:')
             const to = ctx.from
             const listParams = {
                 type: "list",
@@ -58,7 +59,6 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
                     ]
                 }
             }
-            await flowDynamic('\u{1F4A1} Send List:')
             await provider.sendList(to, listParams)
 
         }

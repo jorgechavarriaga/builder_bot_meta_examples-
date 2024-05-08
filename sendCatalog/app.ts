@@ -6,10 +6,38 @@ config()
 
 const PORT = process.env.PORT ?? 3008
 
+//TODO: PRODUCT MUST BE ADDED TO 
+
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAction(
         async (ctx, { flowDynamic, provider }) => {
-            await flowDynamic('Test')
+            const to = ctx.from
+            await flowDynamic('\u{1F4A1} Send Catalog')
+            await provider.sendCatalog(
+                to,
+                'Catalog',
+                '454652887237262'
+            )
+            provider.sendMessageMeta(
+                {
+                    messaging_product: 'whatsapp',
+                    to,
+                    type: "interactive",
+                    interactive: {
+                        type: "product",
+                        body: {
+                            text: "optional body text"
+                        },
+                        footer: {
+                            text: "optional footer text"
+                        },
+                        action: {
+                            catalog_id: "454652887237262",
+                            product_retailer_id: "ID_TEST_ITEM_1"
+                        }
+                    }
+                }
+            )
         }
     )
 

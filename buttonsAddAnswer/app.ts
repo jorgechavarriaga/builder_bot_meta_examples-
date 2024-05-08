@@ -17,6 +17,7 @@ const buttonsList = [
 ]
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
+    .addAnswer('\u{1F4A1} Buttons AddAnswer')
     .addAnswer('Please select your country', { buttons: buttonsList })
     .addAction(
         { capture: true },
