@@ -20,12 +20,21 @@
 
 ### Examples created by:
 
-<p>
-  <a href="https://www.chavazystem.tech">ChavaZystem Tech ™️</a>
-</p>
+<div style="display: flex; align-items: center;">
+  <p style="margin-right: 20px;">Jorge Chavarriaga</p>
+  <span class="Button-label">
+    <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/52203336?v=4" alt="" size="32" height="32" width="32" data-view-component="true">
+  </span>
+</div>
+  <p style="margin-right: 20px; margin-top: 20px">
+    <a href="https://www.chavazystem.tech">ChavaZystem Tech ™️</a>
+  </p>
+
 <hr>
 
 ### buttonsAddAnswer
+
+<a href="https://github.com/jorgechavarriaga/builder_bot_meta_examples-/tree/main/buttonsAddAnswer">buttonsAddAnswer</a>
 
 ### requestLocation
 
